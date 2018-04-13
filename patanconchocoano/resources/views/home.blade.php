@@ -1,6 +1,8 @@
 @extends('layouts.app')
 @section('csss')
-    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+    {{-- <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"> --}}
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 @endsection
 @section('content')
 <div class="container">
@@ -23,6 +25,8 @@
                           <th scope="col">Nombre</th>
                           <th scope="col">Descripción</th>
                           <th scope="col">Creador</th>
+                          <th scope="col">Editar</th>
+                          <th>Eliminar</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -31,14 +35,16 @@
                             <th scope="row">{{ $producto->id }}</th>
                             <td>{{ $producto->nombre }}</td>
                             <td>{{ $producto->descripcion }}</td>
-                            <td>{{ $producto->user->name }}</td>
+                            <td>{{ $usuario->userName }}</td>
+                            <td><a href="#"><i class="material-icons">mode_edit</i></a></td>
+                            <td><a href="#"><i class="material-icons">delete</i></a></td>
                         </tr>
                         @endforeach
                       </tbody>
                     </table>
+                      {{-- {{  dd($productos) }} --}}
 
-
-                    Mostrando {{ count($productos) }} productos de {{ $total }}
+                    {{-- Mostrando {{ count($productos) }} productos de {{ $total }} --}}
                 </div>
             </div>
         </div>

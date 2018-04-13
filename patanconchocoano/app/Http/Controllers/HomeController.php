@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\producto;   
+use App\producto;
+use App\User;   
+
 
 class HomeController extends Controller
 {
@@ -24,12 +26,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $productos = producto::paginate(5);
-        $total = count(producto::all());
-        // dd($total);
+        // $user_id = \Auth::id();
+        $usuario = User::where('id', \Auth::id())->first();
+        $productos = $usuario->productos()->paginate();
+        // dd($productos);
         return view('home', [
             'productos' => $productos,
-            'total' => $total
+            'usuario' => $usuario
         ]);
     }
 }

@@ -9,7 +9,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Productos agregados</div>
+                <div class="card-header">Productos agregados <a href="/productos/crear" class="btn btn-success float-right"><i class="material-icons">add</i></a> </div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -36,8 +36,12 @@
                             <td>{{ $producto->nombre }}</td>
                             <td>{{ $producto->descripcion }}</td>
                             <td>{{ $usuario->userName }}</td>
-                            <td><a href="#"><i class="material-icons">mode_edit</i></a></td>
-                            <td><a href="#"><i class="material-icons">delete</i></a></td>
+                            <td>
+                              <form>
+                                <a href="/producto/update/{{ $producto->id }}"><i class="material-icons">mode_edit</i></a>
+                              </form>
+                            </td>
+                            <td><a href="/producto/delete/{{ $producto->id }}"><i class="material-icons">delete</i></a></td>
                         </tr>
                         @endforeach
                       </tbody>

@@ -18,3 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/producto/delete/{id}', 'productoController@delete')->middleware('auth');
+
+Route::get('productos/crear', function() {
+    return view('productos/crear');
+});

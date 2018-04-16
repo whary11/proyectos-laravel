@@ -21,7 +21,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 // Vistas relacionadas con los productos
 Route::get('/producto/delete/{id}', 'productoController@delete')->middleware('auth');
+Route::get('/producto/update/{id}', 'productoController@ver')->middleware('auth');
+Route::post('/productos/editar', 'productoController@editar')->middleware('auth');
 Route::post('productos/guardar', 'productoController@guardar')->middleware('auth');
-Route::get('productos/crear', function() {
-    return view('productos/crear');
-});
+Route::get('productos/crear', 'productoController@crear')->middleware('auth');

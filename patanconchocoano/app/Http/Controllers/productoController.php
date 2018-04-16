@@ -8,9 +8,31 @@ use App\producto;
 
 class productoController extends Controller
 {
+
+	public function ver($id){
+		$producto = producto::find($id);
+
+		return view('productos.editar', [
+			'producto' => $producto,
+		]);
+	}
+	public function editar(Request $request){
+		producto::where('id', $request->input('id'))->update([
+			'nombre' => $request->input('producto'),
+			'descripcion' => $request->input('desproduct'),
+		]);
+
+		return response()->json(['estado' => true]);
+	}
+
+
 	public function delete($id){
-		dd($id);
-		return $id;
+		$producto = producto::find($id);
+		// dd($producto);
+		$producto->delete();
+
+		return redirect('home');
+		// return $id;
 	}
 
 	public function guardar(requestCrearProducto $request){
@@ -22,13 +44,10 @@ class productoController extends Controller
 			'nombre' => $request->input('producto'),
 			'descripcion' => $request->input('desproduct'),
 		]);
+		return response()->json(['estado' => true]);
+	}
 
-		dd($errors);
-		// if ($producto->id) {
-		// 	dd([$producto]);
-		// }else{
-		// 	dd(['No se pudo Guardar el producto']);
-		// }
-		// return response()->json($producto);
+	public function crear(){
+		return view('productos/crear');
 	}
 }

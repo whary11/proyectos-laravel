@@ -6,8 +6,18 @@
 @endsection
 @section('content')
 <div class="container">
+
+{{-- Imagen del Logo --}}
+<div class="text-center" style="margin-bottom: 10px;">
+  <img style="border-style: dashed;border-color: #218838;" src="http://stmblog.com/wp-content/uploads/2016/11/Google_-G-_Logo.svg_.png" alt="Google" class="img-thumbnail" width="100px" height="100px">
+</div>
+
+
+
+
+
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-10">
             <div class="card">
                 <div class="card-header">Productos agregados <a href="/productos/crear" class="btn btn-success float-right"><i class="material-icons">add</i></a> </div>
 
@@ -18,7 +28,7 @@
                         </div>
                     @endif
 
-                    <table class="table table-hover" id="mitabla">
+                    <table class="table table-responsive table-hover table-sm" id="mitabla">
                       <thead class="thead-dark">
                         <tr>
                           <th scope="col">ID</th>

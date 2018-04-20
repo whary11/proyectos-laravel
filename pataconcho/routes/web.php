@@ -14,6 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('perfil','PerfilController@perfil');
 
 Auth::routes();
 

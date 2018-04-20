@@ -1,55 +1,31 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">
-                	<h1 class="float-left">Panel</h1>
-                	<div class="btn-group float-right" role="group" aria-label="Basic example">
-					  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#crear" style="font-size: 20px;">+</button>
-					</div>
-            	</div>
+<div class="container-fluid">
+	<div class="row">
+	<div class="nav flex-column nav-pills col-md-2" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+	  <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#productos" role="tab" aria-controls="v-pills-home" aria-selected="true">Productos</a>
+	  <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#facturas" role="tab" aria-controls="v-pills-profile" aria-selected="false">Facturas</a>
+	  <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#facturas" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</a>
+	  <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
+	</div>
 
-                <div class="card-body" id="app">
-                    <table class="table table-hover">
-					  <thead class="thead-dark">
-					    <tr>
-					      <th scope="col">#</th>
-					      <th scope="col">First</th>
-					      <th scope="col">Last</th>
-					      <th scope="col">Handle</th>
-					      <th scope="col">Editar</th>
-					      <th scope="col">Eliminar</th>
-					    </tr>
-					  </thead>
-					  <tbody>
-					    <tr>
-					      <th scope="row">1</th>
-					      <td>Mark</td>
-					      <td>Otto</td>
-					      <td>@mdo</td>
-					      <td>
-					      	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editar">
-							  Editar
-							</button>
-					      </td>
-					      <td>
-					      	<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#eliminar">
-							  Eliminar
-							</button>
-					      </td>
-					    </tr>
-					  </tbody>
-					</table>
-					@include('modals.editar')
-					@include('modals.eliminar')
-					@include('modals.crear')
 
-                </div>
-            </div>
-        </div>
-    </div>
+
+
+	<div class="tab-content col-md-10" id="v-pills-tabContent">
+	  <div class="tab-pane fade show active" id="productos" role="tabpanel" aria-labelledby="v-pills-home-tab">
+	    {{-- Vista de productos --}}
+	            @include('tabs.productos')
+	  </div>
+	  <div class="tab-pane fade" id="facturas" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+		{{-- Vista para generar facturas --}}
+		@include('tabs.factura')
+
+	  </div>
+	  <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
+	  <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
+	</div>
 </div>
+	</div>
 @endsection

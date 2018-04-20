@@ -1,0 +1,1 @@
+<p>Vista para generar las facturas</p>

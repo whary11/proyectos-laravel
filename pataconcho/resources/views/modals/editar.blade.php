@@ -10,12 +10,16 @@
       <div class="modal-body">
         <form>
           <div class="form-group">
-            <label for="nombre">Nombre</label>
-            <input type="text" class="form-control" id="nombre" name="nombre" aria-describedby="emailHelp" placeholder="Nombre del producto">
+            <label for="nombre1">Nombre</label>
+            <input type="text" class="form-control" id="nombre1" name="nombre1" aria-describedby="emailHelp" placeholder="Nombre del producto">
           </div>
           <div class="form-group">
-            <label for="descripcion">Descripción</label>
-            <input type="password" class="form-control" name="descripcion" id="descripcion" placeholder="Descripción del producto">
+            <label for="descripcion1">Descripción</label>
+            <input type="password" class="form-control" name="descripcion" id="descripcion1" placeholder="Descripción del producto">
+          </div>
+          <div class="form-group">
+            <label for="precio1">Precio</label>
+            <input type="number" class="form-control" name="descripcion" id="precio1" placeholder="Precio del producto">
           </div>
           <button type="submit" class="btn btn-primary">Actualizar</button>
         </form>

@@ -46,7 +46,7 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{-- {{ Auth::user()->name }} <span class="caret"></span> --}}
+                                    {{ Auth::user()->name }} <span class="caret"></span>
                                       <img src="https://lh3.googleusercontent.com/QxwCl0OGns9IK2n0wdGpJw4Ol8Z5U0ucnmbhaQOduxv6XpFdrAfGxodGk-XiI-KeAAY=s180" class="rounded float-right" alt="Google." width="20px"> 
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">

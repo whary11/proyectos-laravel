@@ -1,1 +1,0 @@
-<p>Esta es la vista para las facturas</p>

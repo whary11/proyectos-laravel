@@ -17,6 +17,10 @@
             <label for="descripcion">Descripción</label>
             <input type="password" class="form-control" name="descripcion" id="descripcion" placeholder="Descripción del producto">
           </div>
+          <div class="form-group">
+            <label for="precio">Precio</label>
+            <input type="number" class="form-control" name="descripcion" id="precio" placeholder="Precio del producto">
+          </div>
           <button type="submit" class="btn btn-primary">Crear</button>
         </form>
       </div>

@@ -17,6 +17,7 @@ Route::get('/', function () {
 Route::get('perfil','PerfilController@perfil');
 
 Auth::routes();
+Route::resource('producto', 'productoController')->middleware('auth');
 
 Route::get('/home', 'HomeController@index')->name('home');
 // Route::

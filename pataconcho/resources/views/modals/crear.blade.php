@@ -8,20 +8,20 @@
         </button>
       </div>
       <div class="modal-body">
-        <form>
+        <form v-on:submit.prevent="crearProducto()">
           <div class="form-group">
             <label for="nombre">Nombre</label>
-            <input type="text" class="form-control" id="nombre" name="nombre" aria-describedby="emailHelp" placeholder="Nombre del producto">
+            <input type="text" class="form-control" id="nombre" name="nombre" aria-describedby="emailHelp" v-model="newProducto.nombre" placeholder="Nombre del producto">
           </div>
           <div class="form-group">
             <label for="descripcion">Descripción</label>
-            <input type="password" class="form-control" name="descripcion" id="descripcion" placeholder="Descripción del producto">
+            <input type="text" v-model="newProducto.descripcion" class="form-control" name="descripcion" id="descripcion" placeholder="Descripción del producto">
           </div>
           <div class="form-group">
             <label for="precio">Precio</label>
-            <input type="number" class="form-control" name="descripcion" id="precio" placeholder="Precio del producto">
+            <input type="number" class="form-control" v-model="newProducto.precio" name="precio" id="precio" placeholder="Precio del producto">
           </div>
-          <button type="submit" class="btn btn-primary">Crear</button>
+          <button type="submit" class="btn btn-primary" >Crear</button>
         </form>
       </div>
       <div class="modal-footer">
@@ -31,3 +31,6 @@
     </div>
   </div>
 </div>
+{{-- Queso y salsa de la casa --}}
+{{-- Unn delicioso partac+on con queso y salsa de la casa. --}}
+{{-- {{ Auth::user()->id }} --}}

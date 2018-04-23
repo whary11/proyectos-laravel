@@ -11,17 +11,17 @@
         <form>
           <div class="form-group">
             <label for="nombre1">Nombre</label>
-            <input type="text" class="form-control" id="nombre1" name="nombre1" aria-describedby="emailHelp" placeholder="Nombre del producto">
+            <input type="text" class="form-control" id="nombre1" name="nombre1" aria-describedby="emailHelp" placeholder="Nombre del producto" v-bind:value="productoModal.nombre">
           </div>
           <div class="form-group">
             <label for="descripcion1">Descripción</label>
-            <input type="password" class="form-control" name="descripcion" id="descripcion1" placeholder="Descripción del producto">
+            <input type="text" class="form-control" name="descripcion" id="descripcion1" placeholder="Descripción del producto" v-bind:value="productoModal.descripcion">
           </div>
           <div class="form-group">
             <label for="precio1">Precio</label>
-            <input type="number" class="form-control" name="descripcion" id="precio1" placeholder="Precio del producto">
+            <input type="number" class="form-control" name="precio1" id="precio1" placeholder="Precio del producto" v-bind:value="productoModal.precio">
           </div>
-          <button type="submit" class="btn btn-primary">Actualizar</button>
+          <button type="submit" class="btn btn-primary" v-on:click.prevent="actualizarProducto(productoModal)">Actualizar</button>
         </form>
       </div>
       <div class="modal-footer">

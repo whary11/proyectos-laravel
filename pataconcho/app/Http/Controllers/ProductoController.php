@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-class ProductoController extends Controller
+use App\Producto;
+class productoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,8 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        //
+        $productos = Producto::orderBy('id', 'DESC')->get();
+        return $productos;
     }
 
     /**
@@ -23,7 +24,7 @@ class ProductoController extends Controller
      */
     public function create()
     {
-        //
+        print('asjbdfjk');
     }
 
     /**
@@ -35,6 +36,18 @@ class ProductoController extends Controller
     public function store(Request $request)
     {
         //
+        // Producto::create($request->all());
+        // return;
+
+        $user = $request->user();
+        $producto = Producto::create([
+            'user_id' => $user->id,
+            'nombre' => $request->input('nombre'),
+            'descripcion' => $request->input('descripcion'),
+            'precio' => $request->input('precio')
+        ]);
+
+        return; 
     }
 
     /**
@@ -45,7 +58,6 @@ class ProductoController extends Controller
      */
     public function show($id)
     {
-        //
     }
 
     /**
@@ -68,7 +80,7 @@ class ProductoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
     }
 
     /**
@@ -79,6 +91,6 @@ class ProductoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Producto::where('id',$id)->delete();
     }
 }

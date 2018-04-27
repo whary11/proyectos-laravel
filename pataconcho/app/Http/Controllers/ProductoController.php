@@ -80,7 +80,8 @@ class productoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+        Producto::find($id)->update($request->all());
+        return;
     }
 
     /**
